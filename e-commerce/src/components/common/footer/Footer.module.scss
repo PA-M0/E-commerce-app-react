@@ -1,0 +1,56 @@
+@import '../../../style/variables.scss';
+
+.footer {
+	background-color: $layout_bg;
+	color: $title_color;
+	width: 100vw;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	
+
+}
+.footerContent {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+.footerSection {
+	
+	flex: 1;
+	h2 {
+		margin-bottom: 10px;
+		color: $title_color;
+
+	}
+	p {
+		color: $txt_color;
+		text-decoration: none;
+		margin: 5px 0;
+	}
+	a {
+		color: $txt_color;
+		text-decoration: none;
+		
+		&:hover {
+			color: $txt_hover;
+		}
+	}
+}
+.links {
+	list-style: none;
+	padding: 0;
+}
+.link {
+	display: block;
+	
+}
+.socialLink {
+	display: block;
+
+}
+.footerBottom {
+	
+	font-size: 14px;
+}
