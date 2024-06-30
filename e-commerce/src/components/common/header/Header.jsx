@@ -9,7 +9,7 @@ function Header() {
       <header className={styles.header}>
       <div className={styles.logo}>
         <a href="/">
-          <img src="/public/logo.svg" alt="LOGO." width="150px" height="100px" />
+          <img src="/public/logo.svg" alt="LOGO." width="150px" height="30px" />
         </a>
       </div>
       <nav className={styles.nav}>
