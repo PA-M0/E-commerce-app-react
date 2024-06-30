@@ -23,9 +23,9 @@ function Footer() {
         </div>
         <div className={styles.footerSection}>
           <h2>Contact Us</h2>
-          <p>Email: info@example.com</p>
-          <p>Phone: +123 456 7890</p>
-          <p>Address: 123 Main Street, Your City, Your Country</p>
+          <p>Email: parsa.shafagh.1382@gmail.com</p>
+          <p>Phone: +98 9156519334</p>
+          <p>Address: 123 Main Street, City, Country</p>
         </div>
         <div className={styles.footerSection}>
           <h2>Follow Us</h2>
