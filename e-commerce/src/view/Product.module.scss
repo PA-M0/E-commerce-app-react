@@ -1,0 +1,116 @@
+@import '../style/variables.scss';
+
+.container {
+    padding: 20px;
+    max-width: 60vw;
+    margin: 5rem auto;
+    border: solid $border-color 1px;
+    background-color: #fff;
+  }
+  
+  .backLink {
+    display: block;
+    margin-bottom: 20px;
+    color: #000;
+    text-decoration: none;
+    text-align: start;
+  }
+  
+  .content {
+    display: flex;
+    gap: 20px;
+    text-align: start;
+  }
+  
+  .imageContainer {
+    flex: 1;
+  }
+  
+  .productImage {
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  .details {
+    flex: 2;
+    padding: 20px;
+  }
+  
+  .brand {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .name {
+    
+    margin: 10px 0;
+  }
+  
+  .description {
+    font-size: 0.8em;
+    margin: 20px 0;
+  }
+
+  .label {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 0.9em;
+  }
+  hr{
+    color:gray
+  }
+  .select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  .colors {
+    margin-bottom: 20px;
+  }
+  
+  .colorOptions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .colorOption {
+    width: 24px;
+    height: 24px;
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+  
+  .colorOption:hover {
+    border-color: #a4a4a4;
+  }
+  
+  .selected {
+    border-color: #0b0b0b; 
+  }
+  
+  .price {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    font-weight: 600;
+}
+  
+  .button {
+    display: block;
+    padding: 15px ;
+    background-color: $button-color;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 300;
+
+    font-size: 0.9em;
+    border-radius: 1px;
+  }
+  
+  .button:hover {
+    background-color: $button-hover;
+  }
+  
