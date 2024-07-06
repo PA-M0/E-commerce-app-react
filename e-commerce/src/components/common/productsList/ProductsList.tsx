@@ -7,17 +7,17 @@ import Skeleton from '../skeleton/Skeleton'
 
 
 const ProductList = () => {
- const [products, setProducts] = useState<ProductType[]>([]);
+  const [products, setProducts] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const API_URL = 'https://fakestoreapi.com/products'
 
     useEffect(() => {
-      getProducts()
+      getProducts(API_URL)
         .then((data) => {
       
           setProducts(data);
           setLoading(false);
-          console.log(products)
         })
         .catch((err) => {
           setError('Failed to load products');
@@ -25,7 +25,7 @@ const ProductList = () => {
         });
     }, []);
 
-  if (loading) {
+  if (loading) {  
     return <div >
        
           <Skeleton />
@@ -33,11 +33,11 @@ const ProductList = () => {
           <Skeleton />
 
         
-    </div>; // Render spinner while loading
+    </div>;
   }
 
   if (error) {
-    return <div>{error}</div>; // Render error message
+    return <div>{error}</div>;
   }
 
   return (
