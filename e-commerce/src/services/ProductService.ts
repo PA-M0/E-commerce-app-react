@@ -13,7 +13,7 @@ export const getProducts = async (API_URL:string): Promise<ProductShape[]> => {
 };
 
 
-export const getSpecificeProduct = async (API_URL:string): Promise<ProductShape> => {
+export const getSpecificProduct = async (API_URL:string): Promise<ProductShape> => {
   try {
     const response = await axios.get(API_URL);
     return response.data;
