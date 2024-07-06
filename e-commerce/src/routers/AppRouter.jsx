@@ -9,8 +9,14 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../view/Home";
 import Shop from "../view/Shop";
 import About from "../view/About";
+import Product from "../view/Product.tsx";
+import useContext from 'react'
 const AppRouter = () => (
+  // const ProductsContext = createContext()
+  // const [products, setProducts] = useState<ProductType[]>([]);
+
   <>
+  {/* <ProductsContext.Provider value="products"> */}
     <Header />
     <Routes>
       {/* <Navigation /> */}
@@ -48,8 +54,10 @@ const AppRouter = () => (
       <Route path="/" element={<Home />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/about" element={<About />} />
+      <Route path="/product/:id" element={<Product />} />
     </Routes>
     <Footer />
+    {/* </ProductsContext.Provider> */}
   </>
 );
 
