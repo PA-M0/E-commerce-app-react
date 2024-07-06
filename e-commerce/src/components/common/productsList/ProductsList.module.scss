@@ -1,0 +1,12 @@
+
+.productListParent {
+  margin: 0 auto;
+  .productListChild{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start; 
+    width: 95vw;
+    margin: 0 auto;
+  }
+  }
+  

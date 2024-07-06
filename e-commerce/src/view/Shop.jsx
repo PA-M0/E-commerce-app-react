@@ -1,10 +1,12 @@
 import React from 'react';
+import ProductList from '../components/common/productsList/ProductsList.tsx';
 
 function Shop() {
   return (
-    <div>
-        Shop
-    </div>
+    <>
+      <h1>All You Need Is Here</h1>
+      <ProductList />
+    </>
   );
 }
 
