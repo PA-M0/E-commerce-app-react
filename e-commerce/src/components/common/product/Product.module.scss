@@ -1,6 +1,7 @@
+@import '../../../style/variables.scss';
 .product {
   position: relative; 
-  border: 1px solid #e0e0e0;
+  border: 1px solid $border-color;
   padding: 16px;
   text-align: center;
   max-width: 12rem;
@@ -15,9 +16,9 @@
 }
 
 .productImageBackground {
-  background-color: #f6f6f6;
+  border: $border-color solid 1px;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 3px;
 }
 
 .productImage {
@@ -70,7 +71,7 @@
   bottom: 1px;
   left: 50%;
   transform: translateX(-50%) translateY(100%); 
-  background-color: #1c1c1c;
+  background-color: $button-color;
   color: #fff;
   border: none;
   padding: 5px 13px;
@@ -82,6 +83,7 @@
 .product:hover .addToCartButton {
   transform: translateX(-50%) translateY(0); 
   opacity: 1;
+  background-color: $button-hover;
 }
 
 .product:hover .productName,
