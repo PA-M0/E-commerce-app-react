@@ -7,10 +7,11 @@
   background-color: $layout_bg;
   padding: 10px 20px;
   color: $title_color;
-  width: 100vw ;
+  width: 100vw;
   position: fixed;
   top: 0;
-	
+	border-bottom: 1px solid $border-color;
+  z-index: 10000;
 
   .logo {
     a {
@@ -20,7 +21,9 @@
       font-weight: bold;
     }
   }
-
+  .shoppingBag{
+    cursor: pointer;
+  }
   .nav {
     display: flex;
 

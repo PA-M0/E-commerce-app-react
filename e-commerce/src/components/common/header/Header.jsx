@@ -1,9 +1,11 @@
-// Header.js
-import React from 'react';
+
+import { React, useState } from 'react';
 import styles from './Header.module.scss';
-import { CiShoppingCart } from "react-icons/ci";
 import { Outlet, Link } from "react-router-dom";
+import { Drawer } from '../drawer/Drawer.tsx'
 function Header() {
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+ 
   return (
     <>
       <header className={styles.header}>
@@ -27,10 +29,19 @@ function Header() {
           <Link to="/contact" className={styles.navLink}>Contact</Link>
           </li>
         </ul>
-        <CiShoppingCart />
-
+       
       </nav>
+      <div>
+      <img  className={styles.shoppingBag} src="/public/shopping-bag.svg" alt="shopping-bag" width={25} height={25} onClick={() => setIsDrawerOpen(true)} />
+      <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
+        <p>Drawer</p>
+      </Drawer>
+    </div>
     </header>
+    
+
+    
+
     <Outlet />
     </>
 
