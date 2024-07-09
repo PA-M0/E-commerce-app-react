@@ -91,7 +91,9 @@ const Filter: React.FC<FilterProps> = ({ categories, onFilterChange }) => {
         </div>
       </div>
       <div className={styles.filterGroup}>
-        <label htmlFor="search">Search</label>
+        <label htmlFor="search">Search
+        <LiaSearchSolid />
+        </label>
         <input
         className={styles.searchBox}
           type="text"
@@ -101,7 +103,6 @@ const Filter: React.FC<FilterProps> = ({ categories, onFilterChange }) => {
           placeholder="Search Products..."
           
         />
-        <LiaSearchSolid />
       </div>
       <div className={styles.filterActions}>
         <Button label="Reset Filter" onClick={handleResetFilters} buttonType="removeFromCart"/>
