@@ -3,15 +3,16 @@ import { ProductShape as ProductType } from '../types/product.ts';
 import { getProducts } from '../../../services/ProductService.ts';
 import Product from '../product/Product.tsx';
 import styles from './ProductsList.module.scss';
-import Skeleton from '../skeleton/Skeleton'
+import Skeleton from '../skeleton/Skeleton';
 import Filter, { Filters } from "../filter/Filter";
+import AddProductForm from "../productManage/ProductManager.tsx";
 
 const ProductList = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const API_URL = 'https://fakestoreapi.com/products'
+  const API_URL = 'https://fakestoreapi.com/products';
 
   useEffect(() => {
     getProducts(API_URL)
@@ -28,8 +29,6 @@ const ProductList = () => {
 
   const handleFilterChange = (filters: Filters) => {
     let filtered = [...products];
-
-   
 
     if (filters.sortBy === "Price: Low to High") {
       filtered.sort((a, b) => (a.price || 0) - (b.price || 0));
@@ -48,7 +47,12 @@ const ProductList = () => {
     setFilteredProducts(filtered);
   };
 
-  if (loading) {  
+  const handleAddProduct = (newProduct: ProductType) => {
+    setProducts([...products, newProduct]);
+    setFilteredProducts([...products, newProduct]);
+  };
+
+  if (loading) {
     return (
       <div>
         <Skeleton />
@@ -72,6 +76,7 @@ const ProductList = () => {
           categories={categories}
           onFilterChange={handleFilterChange}
         />
+        <AddProductForm className={styles.addProductForm} onAddProduct={handleAddProduct} />
       </div>
       <div className={styles.productList}>
         {filteredProducts.map((product) => (

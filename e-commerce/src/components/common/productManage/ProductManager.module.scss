@@ -1,0 +1,31 @@
+@import '../../../style/variables.scss';
+.addProductForm {
+    padding: 1rem;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background: #fff;
+    width: 17vw;
+    margin: 3rem auto;
+
+  }
+  
+  .formGroup {
+    margin-bottom: 1rem;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .formGroup input {
+    width: 90%;
+    padding: 0.5rem;
+    border: 1px solid $border-color;
+    border-radius: 1px;
+  }
+
+  
+  
+  
