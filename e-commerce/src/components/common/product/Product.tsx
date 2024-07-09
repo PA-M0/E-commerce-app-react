@@ -1,4 +1,4 @@
-//PoductCard
+
 import React from 'react';
 import { ProductShape as ProductType } from '../types/product';
 import styles from './Product.module.scss';
