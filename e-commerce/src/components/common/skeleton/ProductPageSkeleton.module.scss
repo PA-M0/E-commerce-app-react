@@ -1,0 +1,34 @@
+.skeletonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 60%;
+    max-height: 30rem;
+    margin: 7rem auto;
+
+    background-color: #fff;
+  }
+  
+  .skeletonImage {
+    width: 100%;
+    height: 300px;
+    background-color: #e0e0e0;
+    margin-bottom: 20px;
+  }
+  
+  .skeletonDetails {
+    width: 100%;
+  }
+  
+  .skeletonLine {
+    height: 20px;
+    background-color: #e0e0e0;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  
+  .skeletonLine:last-child {
+    width: 60%;
+  }
+  
