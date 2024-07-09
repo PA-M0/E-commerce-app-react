@@ -1,0 +1,110 @@
+.container {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  width: 35vw;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.closeButton,
+.clearButton {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.emptyCart {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.cartList {
+  list-style: none;
+  padding: 0;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.productInfo {
+  display: flex;
+  align-items: center;
+}
+
+.productImage {
+  margin-right: 1rem;
+}
+
+.productDetails {
+  flex: 1;
+}
+
+.productTitle {
+  font-size: 1.2rem;
+}
+
+.productAttributes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.productCount {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.productPrice {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.removeButton {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.total {
+  text-align: right;
+  padding: 1rem 0;
+}
+
+.checkout {
+  text-align: right;
+}
+
+.checkoutButton {
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
