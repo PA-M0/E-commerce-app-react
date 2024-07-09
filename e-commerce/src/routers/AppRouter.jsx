@@ -11,6 +11,7 @@ import Shop from "../view/Shop";
 import About from "../view/About";
 import Product from "../view/Product.tsx";
 import useContext from 'react'
+import ProductManager from "../components/common/productManage/ProductManager.tsx";
 const AppRouter = () => (
   // const ProductsContext = createContext()
   // const [products, setProducts] = useState<ProductType[]>([]);
@@ -55,6 +56,8 @@ const AppRouter = () => (
       <Route path="/shop" element={<Shop />} />
       <Route path="/about" element={<About />} />
       <Route path="/product/:id" element={<Product />} />
+      <Route path="/manage" element={<ProductManager />} />
+
     </Routes>
     <Footer />
     {/* </ProductsContext.Provider> */}
