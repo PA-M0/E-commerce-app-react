@@ -35,7 +35,7 @@ function Footer() {
         </div>
       </div>
       <div className={styles.footerBottom}>
-        &copy; {new Date().getFullYear()} Your Company | All Rights Reserved
+        &copy; {new Date().getFullYear()} with love parsa shafagh | All Rights Reserved
       </div>
     </footer>
   );
