@@ -97,7 +97,7 @@
     font-weight: 600;
 }
   
-  .button {
+  .addButton {
     display: block;
     padding: 15px ;
     background-color: $button-color;
@@ -105,12 +105,27 @@
     border: none;
     cursor: pointer;
     font-weight: 300;
-
     font-size: 0.9em;
     border-radius: 1px;
   }
-  
-  .button:hover {
+  .removeButton{
+    display: block;
+    padding: 15px ;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    cursor: pointer;
+    font-weight: 300;
+
+    font-size: 0.9em;
+    border-radius: 1px;
+  } 
+  .removeButton:hover {
+    background-color: #E1E1E1;
+  }
+  .removeButton:focus{
+    border-color: $border-color;
+  }
+  .addButton:hover {
     background-color: $button-hover;
   }
   
