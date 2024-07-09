@@ -14,7 +14,7 @@
   border-radius: 1px;
   transition: background-color 0.3s;
 
-  &.addToCart &.primary{
+  &.addToCart {
     background-color: $button-color;
     color: white;
 
