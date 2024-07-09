@@ -92,10 +92,10 @@ const Product = () => {
     return <div><Skeleton /></div>
   }
   if (error) {
-    return <div>{error}</div>;
+    return <div> <p>{error}</p></div>;
   }
   if (!product) {
-    return <div>No product found</div>;
+    return <p>No product found</p>;
   }
 
   return (
