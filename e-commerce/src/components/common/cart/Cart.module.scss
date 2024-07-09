@@ -1,6 +1,7 @@
+@import '../../../style/variables.scss';
 .container {
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid $border-color;
   border-radius: 1px;
   width: 35vw;
   margin: auto;
@@ -10,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $border-color;
   padding-bottom: 1rem;
 }
 
@@ -23,13 +24,7 @@
   gap: 1rem;
 }
 
-.closeButton,
-.clearButton {
-  background: none;
-  border: 1px solid #ddd;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
+
 
 .emptyCart {
   text-align: center;
@@ -46,7 +41,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $border-color;
 }
 
 .productInfo {
@@ -74,6 +69,7 @@
 
 .productCount {
   display: flex;
+  
   align-items: center;
   gap: 0.5rem;
   margin-top: 0.5rem;
@@ -82,18 +78,13 @@
 .productPrice {
   font-size: 1.2rem;
   font-weight: bold;
-}
-
-.removeButton {
-  background: none;
-  border: 1px solid #ddd;
-  padding: 0.5rem;
-  cursor: pointer;
-  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .total {
   text-align: right;
+
   padding: 1rem 0;
 }
 
@@ -101,10 +92,4 @@
   text-align: right;
 }
 
-.checkoutButton {
-  background: #000;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  cursor: pointer;
-}
+

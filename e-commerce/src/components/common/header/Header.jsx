@@ -1,11 +1,12 @@
 
 import { React, useState } from 'react';
 import styles from './Header.module.scss';
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import { Drawer } from '../drawer/Drawer.tsx'
+import Button from '../button/Button.tsx';
 function Header() {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
- 
+    const navigate = useNavigate()
   return (
     <>
       <header className={styles.header}>
@@ -37,6 +38,7 @@ function Header() {
         <p>Drawer</p>
       </Drawer>
     </div>
+    <Button label='Add Yout Product' buttonType='primary' onClick={() => navigate("/manage") }/>
     </header>
     
 
