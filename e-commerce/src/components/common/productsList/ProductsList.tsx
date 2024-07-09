@@ -29,9 +29,7 @@ const ProductList = () => {
   const handleFilterChange = (filters: Filters) => {
     let filtered = [...products];
 
-    if (filters.brand !== "All Brands") {
-      filtered = filtered.filter((product) => product.brand === filters.brand);
-    }
+   
 
     if (filters.sortBy === "Price: Low to High") {
       filtered.sort((a, b) => (a.price || 0) - (b.price || 0));
@@ -71,7 +69,6 @@ const ProductList = () => {
     <div className={styles.container}>
       <div className={styles.sidebar}>
         <Filter
-          brands={brands}
           categories={categories}
           onFilterChange={handleFilterChange}
         />

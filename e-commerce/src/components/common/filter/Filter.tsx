@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styles from "./Filter.module.scss";
+import Button from "../button/Button.tsx";
+import { LiaSearchSolid } from "react-icons/lia";
 
 interface FilterProps {
-  brands: string[];
+ 
   categories: string[];
   onFilterChange: (filters: Filters) => void;
 }
@@ -16,7 +18,7 @@ interface Filters {
   searchTerm: string; // New filter property for search term
 }
 
-const Filter: React.FC<FilterProps> = ({ brands, categories, onFilterChange }) => {
+const Filter: React.FC<FilterProps> = ({ categories, onFilterChange }) => {
   const [brand, setBrand] = useState("All Brands");
   const [sortBy, setSortBy] = useState("None");
   const [minPrice, setMinPrice] = useState(0);
@@ -49,15 +51,7 @@ const Filter: React.FC<FilterProps> = ({ brands, categories, onFilterChange }) =
     <div className={styles.filterContainer}>
       <h2>Filter Products</h2>
       <div className={styles.filterGroup}>
-        <label htmlFor="brand">Brand</label>
-        <select id="brand" value={brand} onChange={(e) => setBrand(e.target.value)}>
-          <option>All Brands</option>
-          {brands.map((brand) => (
-            <option key={brand} value={brand}>
-              {brand}
-            </option>
-          ))}
-        </select>
+
       </div>
       <div className={styles.filterGroup}>
         <label htmlFor="category">Category</label>
@@ -99,16 +93,19 @@ const Filter: React.FC<FilterProps> = ({ brands, categories, onFilterChange }) =
       <div className={styles.filterGroup}>
         <label htmlFor="search">Search</label>
         <input
+        className={styles.searchBox}
           type="text"
           id="search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search products..."
+          placeholder="Search Products..."
+          
         />
+        <LiaSearchSolid />
       </div>
       <div className={styles.filterActions}>
-        <button onClick={handleApplyFilters}>Apply Filters</button>
-        <button onClick={handleResetFilters}>Reset Filters</button>
+        <Button label="Reset Filter" onClick={handleResetFilters} buttonType="removeFromCart"/>
+        <Button label="Apply Filters" onClick={handleApplyFilters}buttonType="primary" />
       </div>
     </div>
   );
