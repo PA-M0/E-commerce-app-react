@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useLocalStorageState from "use-local-storage-state";
-import { ProductShape } from "../components/common/types/product";
+import { ProductShape } from '../types/product.ts';
 import Button from "../button/Button";
 import styles from "./Cart.module.scss";
 
@@ -17,11 +17,16 @@ const Cart: React.FC = () => {
   const getTotalPrice = () => {
     return Object.values(cart || {})
       .reduce((total, product) => {
-        if (!product.price || !product.count) return total;
+        if (!product.price || !product.count) {
+          console.warn("Invalid product data", product);
+          return total;
+        }
         return total + product.price * product.count;
       }, 0)
       .toFixed(2);
   };
+
+ 
 
   const removeFromCart = (productId: string) => {
     const { [productId]: removedProduct, ...rest } = cart || {};
@@ -99,21 +104,17 @@ const Cart: React.FC = () => {
                   <div className={styles.productPrice}>
                     ${(product.price * product.count).toFixed(2)}
                     <Button
-                    label="X"
-                    onClick={() => removeFromCart(product.id)}
-                    buttonType="removeFromCart"
-                  />
+                      label="X"
+                      onClick={() => removeFromCart(product.id)}
+                      buttonType="removeFromCart"
+                    />
                   </div>
-                  
-
-                 
                 </div>
               </li>
             ))}
           </ul>
           <div className={styles.total}>
             <h2>Subtotal Amount: ${getTotalPrice()}</h2>
-        
           </div>
           <div className={styles.checkout}>
             <Button label="CHECK OUT" buttonType="addToCart" />
