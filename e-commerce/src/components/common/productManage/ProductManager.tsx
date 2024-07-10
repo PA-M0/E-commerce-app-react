@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './ProductManager.module.scss';
 import { ProductShape as ProductType } from '../types/product';
-
+import Button from '../button/Button.tsx'
 interface AddProductFormProps {
   onAddProduct: (product: ProductType) => void;
 }
@@ -68,7 +68,7 @@ const AddProductForm: React.FC<AddProductFormProps> = ({ onAddProduct }) => {
         <label htmlFor="count">Rating (Count)</label>
         <input id="count" type="number" value={rating.count} onChange={(e) => setRating({ ...rating, count: Number(e.target.value) })} />
       </div>
-      <button onClick={handleAddProduct}>Add Product</button>
+      <Button label="Add Product" buttonType="primary" onClick={handleAddProduct} />
     </div>
   );
 };
