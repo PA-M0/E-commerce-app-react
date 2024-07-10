@@ -45,14 +45,31 @@ const Product = () => {
   const handleColorChange = (color) => {
     setSelectedColor(color);
   };
-  const addToCartHandle = (product: ProductShape) => {
-    setCart((prevCart) => ({
-      ...prevCart,
-      [product.id]: product,
-    }));
+
+  const addToCart = (product: ProductShape) => {
+    setCart((prevCart) => {
+      const existingProduct = prevCart[product.id];
+      return {
+        ...prevCart,
+        [product.id]: existingProduct
+          ? { ...existingProduct, count: existingProduct.count + 1 }
+          : { ...product, count: 1 },
+      };
+    });
     showAlert('product added to your cart successfully', 'success');
     setIsAddedToCart(true);
-  }; 
+  };
+
+
+  // const addToCartHandle = (product: ProductShape) => {
+  //   setCart((prevCart) => ({
+  //     ...prevCart,
+  //     [product.id]: product,
+  //   }));
+  //   showAlert('product added to your cart successfully', 'success');
+  //   setIsAddedToCart(true);
+  // }; 
+  
   const showAlert = (message: string, type: "success" | "error" | "info") => {
     setAlert({ message, type });
    
@@ -154,7 +171,7 @@ const Product = () => {
           <p className={styles.price}>${product.price.toFixed(2)}</p>
           {isAddedToCart ? 
              <Button label="Remove from Cart"  buttonType="removeFromCart" onClick={removeFromCart}  />
-            : <Button label="Add to Cart" onClick={() => addToCartHandle(product)}  buttonType="addToCart" />
+            : <Button label="Add to Cart" onClick={() => addToCart(product)}  buttonType="addToCart" />
              }
           </div>
       </div>
